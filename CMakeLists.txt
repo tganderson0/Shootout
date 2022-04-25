@@ -108,6 +108,15 @@ include_directories(SFML/include)
 add_dependencies(Shootout sfml-graphics sfml-audio sfml-system sfml-window sfml-network)
 target_link_libraries(Shootout sfml-graphics sfml-audio sfml-system sfml-window sfml-network)
 
+#
+# ------------------------ Add CTTI ------------------------
+#
+
+#
+# Reference: https://github.com/Manu343726/ctti
+add_subdirectory(ctti)
+include_directories(ctti/include)
+
 
 #
 # ------------------------ Clang Format ------------------------
