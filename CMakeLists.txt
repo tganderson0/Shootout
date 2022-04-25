@@ -84,9 +84,9 @@ set_property(TARGET Shootout PROPERTY CXX_STANDARD 17)
 # Enable a lot of warnings, forcing better cod eto be written
 #
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-	target_compile_options(Multiplayer-Step0-ECS PRIVATE /W4 /permissive-)
+	target_compile_options(Shootout PRIVATE /W4 /permissive-)
 else()
-	target_compile_options(Multiplayer-Step0-ECS PRIVATE -O3 -Wall -Wextra -pedantic) # -Wconversion -Wsign-conversion
+	target_compile_options(Shootout PRIVATE -O3 -Wall -Wextra -pedantic) # -Wconversion -Wsign-conversion
 endif()
 
 
