@@ -107,3 +107,39 @@ include_directories(SFML/include)
 
 add_dependencies(Shootout sfml-graphics sfml-audio sfml-system sfml-window sfml-network)
 target_link_libraries(Shootout sfml-graphics sfml-audio sfml-system sfml-window sfml-network)
+
+
+#
+# ------------------------ Clang Format ------------------------
+#
+#
+# Prepare a pre-build step to run clang-format over all the [ch]pp source files.
+# Start by finding the location of the clang-format executable.
+#
+find_program(CLANG_FORMAT "clang-format")
+if (CLANG_FORMAT)
+    message("Clang-Format found at: " ${CLANG_FORMAT})
+
+    #
+    # Need to take the simple source file locations used for the project and get their full
+    # file system locations for use in putting together the clang-format command line
+    #
+    unset(CODE_FILES_PATHS)
+    foreach(CODE_FILE ${ALL_CODE_FILES})
+        get_source_file_property(WHERE ${CODE_FILE} LOCATION)
+        set(CODE_FILES_PATHS ${CODE_FILES_PATHS} ${WHERE})
+    endforeach()
+
+    #
+    # This creates the clang-format target/command
+    #
+    add_custom_target(
+        ClangFormat
+        COMMAND ${CLANG_FORMAT}
+        -i
+        -style=file
+        ${CODE_FILES_PATHS}
+    )
+else()
+    message("Unable to find clang-format")
+endif()
