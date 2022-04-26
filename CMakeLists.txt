@@ -29,6 +29,8 @@ set(COMPONENTS_HEADERS
 	components/Sprite.hpp
 	components/Component.hpp
 	components/Size.hpp
+	components/Movement.hpp
+	components/Input.hpp
 	)
 set(COMPONENTS_SOURCES
 	)
@@ -37,10 +39,12 @@ set(COMPONENTS_SOURCES
 set(SYSTEMS_HEADERS
 	systems/System.hpp
 	systems/Renderer.hpp
+	systems/KeyboardInput.hpp
 	)
 set(SYSTEMS_SOURCES
 	systems/System.cpp
 	systems/Renderer.cpp
+	systems/KeyboardInput.cpp
 	)
 
 

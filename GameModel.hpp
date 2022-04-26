@@ -2,6 +2,7 @@
 
 #include "entities/Entity.hpp"
 #include "systems/Renderer.hpp"
+#include "systems/KeyboardInput.hpp"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
@@ -23,6 +24,9 @@ class GameModel
 
     entities::EntityMap m_entities;
 
+
+    // Systems
+    std::unique_ptr<systems::KeyboardInput> m_systemKeyboardInput;
     std::unique_ptr<systems::Renderer> m_systemRender;
 
     void addEntity(std::shared_ptr<entities::Entity> entity);

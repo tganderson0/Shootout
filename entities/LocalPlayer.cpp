@@ -3,6 +3,8 @@
 #include "components/Position.hpp"
 #include "components/Sprite.hpp"
 #include "components/Size.hpp"
+#include "components/Movement.hpp"
+#include "components/Input.hpp"
 
 #include <iostream>
 
@@ -39,6 +41,15 @@ namespace entities
         entity->addComponent(std::make_unique<components::Position>(position));
         entity->addComponent(std::make_unique<components::Size>(viewSize));
         entity->addComponent(std::make_unique<components::Sprite>(playerSprite));
+        entity->addComponent(std::make_unique<components::Movement>(0.002f));
+
+        auto inputs = {
+            components::Input::Type::Up,
+            components::Input::Type::Down,
+            components::Input::Type::Left,
+            components::Input::Type::Right,
+            components::Input::Type::Fire};
+        entity->addComponent(std::make_unique<components::Input>(inputs));
 
         return entity;
 
