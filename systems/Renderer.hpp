@@ -21,7 +21,10 @@ namespace systems
         {
         }
 
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Woverloaded-virtual"
         void update(std::chrono::milliseconds elapsedTime, std::shared_ptr<sf::RenderTarget> renderTarget);
+        #pragma clang diagnostic pop
 
       private:
     };

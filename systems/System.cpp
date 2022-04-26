@@ -6,7 +6,7 @@ namespace systems
 {
   void System::addEntity(std::shared_ptr<entities::Entity> entity)
   {
-    if (!isInterested(entity.get()))
+    if (isInterested(entity.get()))
     {
       m_entities[entity->getId()] = entity;
     }
