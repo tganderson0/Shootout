@@ -13,20 +13,29 @@ set(HEADER_FILES
 
 
 set(ENTITY_HEADERS
+	entities/Entity.hpp
 	)
 set(ENTITY_SOURCES
+	entities/Entity.cpp
 	)
 
 
 set(COMPONENTS_HEADERS
+	components/Position.hpp
+	components/Sprite.hpp
+	components/Component.hpp
 	)
 set(COMPONENTS_SOURCES
 	)
 
 
 set(SYSTEMS_HEADERS
+	systems/System.hpp
+	systems/Renderer.hpp
 	)
 set(SYSTEMS_SOURCES
+	systems/System.cpp
+	systems/Renderer.cpp
 	)
 
 

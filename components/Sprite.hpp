@@ -1,11 +1,12 @@
 #pragma once
 
+#include "Component.hpp"
 #include <SFML/Graphics.hpp>
 #include <memory>
 
 namespace components
 {
-  class Sprite
+  class Sprite : public Component
   {
     public:
       Sprite(std::shared_ptr<sf::Sprite> sprite) :

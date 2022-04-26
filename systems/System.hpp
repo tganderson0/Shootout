@@ -16,25 +16,25 @@
 
 namespace systems
 {
-  class System
-  {
-    public:
-      System(std::initializer_list<ctti::unnamed_type_id_t> list) : 
-        m_interests(list)
-      {
-      }
+    class System
+    {
+      public:
+        System(std::initializer_list<ctti::unnamed_type_id_t> list) :
+            m_interests(list)
+        {
+        }
 
-      virtual void addEntity(std::shared_ptr<entities::Entity> entity);
-      virtual void removeEntity(decltype(entities::Entity().getId()) entityId);
+        virtual void addEntity(std::shared_ptr<entities::Entity> entity);
+        virtual void removeEntity(decltype(entities::Entity().getId()) entityId);
 
-      // The (void)elapsedTime is a technique to silence an unused parameter warning
-      virtual void update(std::chrono::milliseconds elapsedTime) { (void)elapsedTime; }
+        // The (void)elapsedTime is a technique to silence an unused parameter warning
+        virtual void update(std::chrono::milliseconds elapsedTime) { (void)elapsedTime; }
 
-    protected:
-      entities::EntityMap m_entities;
-    
-    private:
-      std::unordered_set<ctti::unnamed_type_id_t> m_interests;
-      bool isInterested(entities::Entity* entity);
-  }
+      protected:
+        entities::EntityMap m_entities;
+
+      private:
+        std::unordered_set<ctti::unnamed_type_id_t> m_interests;
+        bool isInterested(entities::Entity* entity);
+    };
 }

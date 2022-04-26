@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "components/Component.hpp"
 #include <atomic>
 #include <cstdint>
 #if defined(_MSC_VER)
@@ -53,7 +53,7 @@ namespace entities
         static std::atomic<std::uint32_t> nextId; // static ensures each entity gets a unique id, and atomic ensures no problems with threading
 
         decltype(nextId.load()) m_id;
-        std::unordered_map<ctti:unnamed_type_id_t, std::unique_ptr<components::Component>> m_components;
+        std::unordered_map<ctti::unnamed_type_id_t, std::unique_ptr<components::Component>> m_components;
     };
 
     using EntityMap = std::unordered_map<decltype(Entity().getId()), std::shared_ptr<Entity>>;
