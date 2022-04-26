@@ -3,6 +3,7 @@
 #include "System.hpp"
 #include "components/Position.hpp"
 #include "components/Sprite.hpp"
+#include "components/Size.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <chrono>
@@ -15,7 +16,8 @@ namespace systems
       public:
         Renderer() :
             System({ctti::unnamed_type_id<components::Sprite>(),
-                    ctti::unnamed_type_id<components::Position>()})
+                    ctti::unnamed_type_id<components::Position>(),
+                    ctti::unnamed_type_id<components::Size>()})
         {
         }
 

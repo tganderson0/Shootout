@@ -9,7 +9,7 @@ namespace systems
 {
     void Renderer::update(std::chrono::milliseconds elapsedTime, std::shared_ptr<sf::RenderTarget> renderTarget)
     {
-        (void)elapsedTime; // Compiler warning
+        (void)elapsedTime; // Compiler warning ignore since we don't care about elapsedTime yet...
 
         // Draw Background
         sf::RectangleShape square({1.0f, 1.0f});

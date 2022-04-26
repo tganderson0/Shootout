@@ -14,9 +14,11 @@ set(HEADER_FILES
 
 set(ENTITY_HEADERS
 	entities/Entity.hpp
+	entities/LocalPlayer.hpp
 	)
 set(ENTITY_SOURCES
 	entities/Entity.cpp
+	entities/LocalPlayer.cpp
 	)
 
 
@@ -24,6 +26,7 @@ set(COMPONENTS_HEADERS
 	components/Position.hpp
 	components/Sprite.hpp
 	components/Component.hpp
+	components/Size.hpp
 	)
 set(COMPONENTS_SOURCES
 	)
