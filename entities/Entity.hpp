@@ -68,7 +68,7 @@ namespace entities
     template <typename T>
     void Entity::removeComponent()
     {
-      m_components.erase(ctti:unnamed_type_id<T>());
+      m_components.erase(ctti::unnamed_type_id<T>());
     }
 
     template <typename T>

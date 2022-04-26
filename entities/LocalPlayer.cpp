@@ -4,6 +4,8 @@
 #include "components/Sprite.hpp"
 #include "components/Size.hpp"
 
+#include <iostream>
+
 namespace entities
 {
     std::shared_ptr<Entity> createLocalPlayer(std::string textureFile, sf::Vector2f viewSize, sf::Vector2f position, float size, std::unordered_set<std::shared_ptr<sf::Texture>>& textures) 
@@ -15,6 +17,7 @@ namespace entities
         textures.insert(texture);
         if (!texture->loadFromFile(textureFile))
         {
+            std::cout << "Couldn't find the file " << textureFile << std::endl;
             return nullptr;
         }
 

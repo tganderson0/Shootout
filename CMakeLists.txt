@@ -7,8 +7,10 @@ project(Shootout)
 
 set(SOURCE_FILES
 	main.cpp
+	GameModel.cpp
 	)
 set(HEADER_FILES
+	GameModel.hpp
 	)
 
 
@@ -100,6 +102,14 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 else()
 	target_compile_options(Shootout PRIVATE -O3 -Wall -Wextra -pedantic) # -Wconversion -Wsign-conversion
 endif()
+
+
+
+#
+# Move the assets into the build folder so they load at runtime (inside MSVC)
+#
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/assets/crow.png ${CMAKE_CURRENT_BINARY_DIR}/assets/crow.png COPYONLY)
+
 
 
 #
