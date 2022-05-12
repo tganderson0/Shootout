@@ -31,6 +31,7 @@ set(COMPONENTS_HEADERS
 	components/Size.hpp
 	components/Movement.hpp
 	components/Input.hpp
+	components/Collider.hpp
 	)
 set(COMPONENTS_SOURCES
 	)
@@ -40,14 +41,24 @@ set(SYSTEMS_HEADERS
 	systems/System.hpp
 	systems/Renderer.hpp
 	systems/KeyboardInput.hpp
+	systems/CollisionSystem.hpp
 	)
 set(SYSTEMS_SOURCES
 	systems/System.cpp
 	systems/Renderer.cpp
 	systems/KeyboardInput.cpp
+	systems/CollisionSystem.cpp
 	)
 
+set(DATA_STRUCTURES_HEADERS
+	datastructures/SmallList.hpp
+	datastructures/UGrid.hpp
+	)
 
+set(DATA_STRUCTURES_SOURCES
+	datastructures/SmallList.cpp
+	datastructures/UGrid.cpp
+	)
 #
 # Organize the files into logical groups
 #
@@ -64,6 +75,9 @@ source_group("Entities\\Source Files" FILES ${ENTITY_SOURCES})
 source_group("Systems\\Header Files" FILES ${SYSTEMS_HEADERS})
 source_group("Systems\\Source Files" FILES ${SYSTEMS_SOURCES})
 
+source_group("Data-Structures\\Header Files" FILES ${DATA_STRUCTURES_HEADERS})
+source_group("Data-Structures\\Source Files" FILES ${DATA_STRUCTURES_SOURCES})
+
 
 #
 # For clang-format
@@ -78,6 +92,8 @@ set(ALL_CODE_FILES
 	${ENTITY_SOURCES}
 	${SYSTEMS_HEADERS}
 	${SYSTEMS_SOURCES}
+	${DATA_STRUCTURES_HEADERS}
+	${DATA_STRUCTURES_SOURCES}
 	)
 
 #

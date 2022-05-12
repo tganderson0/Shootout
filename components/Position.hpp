@@ -11,14 +11,14 @@ namespace components
     class Position : public Component
     {
       public:
-        Position(sf::Vector2f position, float rotation = 0.0f) :
+        Position(sf::Vector2i position, float rotation = 0.0f) :
             m_position(position),
             m_rotation(rotation)
         {
         }
 
         auto get() { return m_position; }
-        auto set(sf::Vector2f position) { m_position = position; }
+        auto set(sf::Vector2i position) { m_position = position; }
 
         /// <summary>
         /// Returns the rotation of the transform
@@ -32,7 +32,7 @@ namespace components
         void setRotation(float rotation) { m_rotation = rotation; }
 
       private:
-        sf::Vector2f m_position;
+        sf::Vector2i m_position;
         float m_rotation;
     };
 }
